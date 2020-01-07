@@ -1,10 +1,22 @@
 import React from "react";
 import {Route, Redirect} from "react-router-dom";
 
-function PrivateRoute (){
-    return (
-        <h1>hi</h1>
-    )
-}
+const PrivateRoute = ({ component: Component, ...theRest}) => {
+  return (
+    <Route 
+      {...theRest}
+      render={() => {
+        if (localStorage.getItem("token")) {
+          return <Component />;
+        } else {
+          console.log(
+            "cd: Privateroute.js: Privateroute: Route.render: redirecting!"
+          );
+          return <Redirect to="/" />
+        }
+      }}
+    />
+  );
+};
 
 export default PrivateRoute;

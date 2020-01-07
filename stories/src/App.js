@@ -7,6 +7,8 @@ import Stories from './components/Stories';
 import { axiosWithAuth } from './axiosWithAuth';
 import { PubContext } from './contexts/PubStories';
 import data from './data';
+import Carousel from "./components/StoriesCarousel";
+
 
 function App() {
   const [ pub, setPub ] = useState([]);
@@ -28,6 +30,8 @@ function App() {
         <PrivateRoute exact path='/portal' component={Admin} />
         <Route path='/aboutus' component={AboutUs} /> */}
         <Route path='/stories' component={Stories} />
+        <Route exact path="/" component={Login} />
+        <PrivateRoute exact path="/carousel-stories" component={Carousel} />
         {/* <Route path='/submit' component={Submit} /> */}
       </Router>
     </PubContext.Provider>
