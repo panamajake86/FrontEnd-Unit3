@@ -8,6 +8,7 @@ import { axiosWithAuth } from './axiosWithAuth';
 import { PubContext } from './contexts/PubStories';
 import data from './data';
 import Carousel from "./components/StoriesCarousel";
+import Navigation from "./components/Navigation";
 
 
 function App() {
@@ -24,14 +25,16 @@ function App() {
 
   return (
     console.log(pub),
+    
     <PubContext.Provider value={pub}>
       <Router>
-        {/* <Route path="/login" component={Login} />
-        <PrivateRoute exact path='/portal' component={Admin} />
+        <Navigation />
+        <Route path="/login" component={Login} />
+        {/* <PrivateRoute exact path='/portal' component={Admin} />
         <Route path='/aboutus' component={AboutUs} /> */}
         <Route path='/stories' component={Stories} />
-        <Route exact path="/" component={Login} />
-        <PrivateRoute exact path="/carousel-stories" component={Carousel} />
+        <Route exact path="/" component={Carousel} />
+        {/* <PrivateRoute exact path="/carousel-stories" component={Carousel} /> */}
         {/* <Route path='/submit' component={Submit} /> */}
       </Router>
     </PubContext.Provider>
