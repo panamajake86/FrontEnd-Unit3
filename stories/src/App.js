@@ -18,7 +18,7 @@ function App() {
             <Navigation />
           </div>
         </nav>
-        <Route exact path="/" component={Login} />
+        <Route exact path="/login" component={Login} />
         <Route path="/stories" component={Stories} />
         <Route path="/submit" component={SubmitStories} />
 
