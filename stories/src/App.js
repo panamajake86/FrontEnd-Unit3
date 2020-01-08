@@ -4,11 +4,13 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import PrivateRoute from "./components/PrivateRoute";
 // import Login from "./components/Login";
 import Stories from './components/Stories';
+import SubmitStories from "./components/SubmitStories";
+import Navigation from "./components/Navigation";
+
 import { axiosWithAuth } from './axiosWithAuth';
 import { PubContext } from './contexts/PubStories';
 import data from './data';
 import Carousel from "./components/StoriesCarousel";
-
 
 function App() {
   const [ pub, setPub ] = useState([]);
@@ -23,6 +25,7 @@ function App() {
   }, []);
 
   return (
+    <Navigation />
     console.log(pub),
     <PubContext.Provider value={pub}>
       <Router>
