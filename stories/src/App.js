@@ -9,18 +9,22 @@ import { PubContext } from './contexts/PubStories';
 import data from './data';
 import Carousel from "./components/StoriesCarousel";
 import Navigation from "./components/Navigation";
+import Admin from "./components/Admin";
 
 
 function App() {
   const [ pub, setPub ] = useState([]);
 
   useEffect(() => {
-    // axiosWithAuth()
-    //   .get('')
-    //   .then(res => setPub(res.data))
-    //   .catch(err => console.log(err.message));
+    axiosWithAuth()
+      .get('/colors')
+      .then(res => 
+        console.log("getting data", res)
+        // setPub(res.data)
+        )
+      .catch(err => console.log(err.message));
     
-    setPub([...data]);
+  //   setPub([data]);
   }, []);
 
   return (
@@ -34,6 +38,7 @@ function App() {
         <Route path='/aboutus' component={AboutUs} /> */}
         <Route path='/stories' component={Stories} />
         <Route exact path="/" component={Carousel} />
+        <Route path="/admin" component={Admin} />
         {/* <PrivateRoute exact path="/carousel-stories" component={Carousel} /> */}
         {/* <Route path='/submit' component={Submit} /> */}
       </Router>
