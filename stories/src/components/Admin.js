@@ -1,24 +1,31 @@
 import React from "react";
-import axiosWithAuth from "../axiosWithAuth";
+import { axiosWithAuth } from "../axiosWithAuth";
 import { PubContext } from "../contexts/PubStories";
 
 const Admin = props => {
-    const stories = React.createContext(PubContext);
+    const story = React.useContext(PubContext);
 
-    const deleteStory = e => {
-        axiosWithAuth()
-            .delete(`/colors/${color.id}`)
-    };
+    // const deleteStory = e => {
+    //     axiosWithAuth()
+    //         .delete(`/colors/${color.id}`)
+    // };
 
     return (
         <>
-            {stories.map(story => (
+            {story.map(stuff => (
                 <div>
-                    <p>{story.color}</p>
-                    <h1>{story.code.hex}</h1>
+                    <p>{stuff.name}</p>
+                    <p>{stuff.story}</p>
+                    <p>{stuff.quote}</p>
+                    <button
+                        onClick={e=>{
+                            e.preventDefault();
+                            // deleteStory();
+                        }}
+                        >Delete</button>
                 </div>
             ))}
-        </> 
+        </>
     )
 };
 

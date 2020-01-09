@@ -8,14 +8,14 @@ const Stories = props => {
         <>
             {story.map(stuff => (
                 <div>
-                                    <p>{stuff.name}</p>
-                <p>{stuff.story}</p>
-                <p>{stuff.quote}</p>
+                    <p>{stuff.name}</p>
+                    <p>{stuff.story}</p>
+                    <p>{stuff.quote}</p>
                 </div >
             ))}
-        </> 
+        </>
     )
 }
-    
+
 
 export default Stories;

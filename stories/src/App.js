@@ -16,15 +16,15 @@ function App() {
   const [ pub, setPub ] = useState([]);
 
   useEffect(() => {
-    axiosWithAuth()
-      .get('/colors')
-      .then(res => 
-        console.log("getting data", res)
-        // setPub(res.data)
-        )
-      .catch(err => console.log(err.message));
+    // axiosWithAuth()
+    //   .get('/colors')
+    //   .then(res => 
+    //     console.log("getting data", res)
+    //     // setPub(res.data)
+    //     )
+    //   .catch(err => console.log(err.message));
     
-  //   setPub([data]);
+    setPub([...data]);
   }, []);
 
   return (
