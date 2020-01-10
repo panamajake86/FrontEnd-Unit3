@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import { axiosWithAuth } from "../axiosWithAuth";
+import Navigation from './Navigation';
 import axios from 'axios';
 
 const Login = props => {
@@ -31,6 +31,7 @@ const Login = props => {
 
   return(
     <div>
+      <Navigation />
       <h1>Refugee Stories</h1>
       <form onSubmit={login}> 
         <input
