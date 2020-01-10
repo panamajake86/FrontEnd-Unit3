@@ -2,7 +2,7 @@ import React from "react";
 import Navigation from './Navigation';
 import Stories from './Stories';
 import Carousel from './StoriesCarousel';
-// import SubmitForm from './SubmitForm';
+import SubmitStories from './SubmitStories';
 import { PubContext } from '../contexts/PubStories';
 import axios from 'axios';
 
@@ -30,7 +30,7 @@ const Home = () => {
             <Navigation />
             <Carousel />
             <Stories />
-            {/* <SubmitForm /> */}
+            <SubmitStories />
         </PubContext.Provider>
     )
 }
